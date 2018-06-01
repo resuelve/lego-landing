@@ -4,7 +4,7 @@
   "description": "Landing Maker   ==================",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,11 @@
   "homepage": "https://github.com/resuelve/landing-maker#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "consolecolors": "^0.33.2-b",
     "express": "^4.16.3",
+    "nodemon": "^1.17.5",
     "pug": "^2.0.3",
     "sass": "^1.5.0"
   },
