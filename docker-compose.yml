@@ -1,14 +1,15 @@
 version: "3"
 services:
   development:
-    build: .
+    build: ./lib/.
     container_name: landing-maker
     volumes:
-      - .:/usr/app
+      - ./lib/.:/usr/app
       - /usr/app/node_modules
     environment:
       - ENV=development
       - PORT=80
     ports:
       - '8080:80'
+      - '35729:35729'
     command: npm start

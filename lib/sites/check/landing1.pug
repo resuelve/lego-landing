@@ -1,0 +1,21 @@
+extends layout.pug
+
+block styles
+  link(rel="stylesheet", type="text/css", href="styles/a1.css")
+
+block body
+  include header.pug
+  content
+    section
+     strong Solo pon tus datos aquí
+    br
+    label
+      |Nombre
+    input(type="text")
+    br
+    label
+      |Apellidos
+      input(type="text")
+
+  include footer.pug
+

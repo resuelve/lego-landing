@@ -1,0 +1,38 @@
+@import 'site'
+
+body
+  background-color: #eee
+
+header.header
+  background-color: #06f
+  position: relative
+  z-index: 0
+  height: 400px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  color: #fff
+  :before
+    z-index: -1
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: url("https://loremflickr.com/1280/500/beach") no-repeat center
+    background-size: cover
+    opacity: 0.2
+  h1
+    font-size: calc(3px + 5vw)
+  h2
+    font-size: calc(10px + 3vw)
+
+footer.footer
+  padding: 20px 10px
+  background-color: #444
+  color: #fff
+  text-align: center
+  font-size: calc(1px + 1vw)
+  line-height: 1em
