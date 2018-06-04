@@ -1,0 +1,30 @@
+mixin checkResult(number)
+  section.checkResult
+    h3 #{number} &middot; Consulta tu puntuación de buró
+    .loadingZone
+      i.fa.fa-circle-notch.fa-spin
+      br
+      | Ya casi está listo, solo un poco más
+    .chartZone.hidden
+      .barChart
+        .legend
+          .min 200
+          .map 400
+        .bar
+          - for ( i=1; i <= 32 ; i++ )
+            - if (i < 30)
+              .section(class=`section-${i}`).active
+            - else
+              .section(class=`section-${i}`)
+      .actionZone
+        p Tu resultado basado en tu historial del buró de crédito es:
+        .number 380
+        p.action
+          |Eres el Super Sayayin del crédito. ¡Comparte tu score con tus amigos!
+        .btns
+          .btn.btn-facebook
+            i.fab.fa-facebook
+            span presumir en facebook
+          .btn.btn-twitter
+            i.fab.fa-twitter
+            span presumir en twitter
