@@ -18,28 +18,8 @@ block body
     .row
       p.hero Ahora consultar tu buró de crédito es tan fácil como 1 &middot; 2 &middot; 3
     .row
-      +dataLoader(1)
-      +payment(2)
+      +checkResult(1)
     .row
-      +checkResult(3)
+      +payment(2)
+      +dataLoader(3)
   include _footer
-
-  script.
-    const payByFB = document.querySelector('#pay-by-share1')
-    const payByTW = document.querySelector('#pay-by-share2')
-    let clicks = 0
-    const canReveal = () => {
-      if (clicks < 1) return
-      const loadingZone = document.querySelector('.loadingZone')
-      const chartZone = document.querySelector('.chartZone')
-      loadingZone.classList.add('hidden')
-      chartZone.classList.remove('hidden')
-    }
-    payByFB.onclick = () => {
-      clicks += 1
-      canReveal()
-    }
-    payByTW.onclick = () => {
-      clicks += 1
-      canReveal()
-    }

@@ -1,0 +1,29 @@
+mixin payment(number)
+  section.payment
+    h3 #{number} &middot; Elige tu forma de pago
+    .zone
+      input(type="radio", value="money", name="share", checked=true)#money.toggleP
+      .fakeCheck.reveal-if-active: i.fas.fa-check-circle
+      .fakeCheck.hide-if-active: i.far.fa-circle
+      label(for="money") $250.00
+      .reveal-if-active.toggleZone
+        .alert.warning
+          .name Error
+          .desc payment_section.php was not found in the server
+          .desc2 ERROR trace route: /users/landing/wp-content/plugins/payment.php:55
+    .zone
+      input(type="radio", value="share", name="share")#share.toggleP
+      .fakeCheck.reveal-if-active: i.fas.fa-check-circle
+      .fakeCheck.hide-if-active: i.far.fa-circle
+      label(for="share")
+        span ¡Gratis!
+        |  Al compartirlo con tus amigos
+      .reveal-if-active.toggleZone
+        |Por tiempo limitado, solo comparte en tus redes sociales esta página
+        .btns
+          .btn.btn-facebook#pay-by-share1
+            i.fab.fa-facebook
+            span compartir en facebook
+          .btn.btn-twitter
+            i.fab.fa-twitter#pay-by-share2
+            span compartir en twitter
