@@ -22,9 +22,11 @@ mixin checkResult(number)
         p.action
           |Eres el Super Sayayin del crédito. ¡Comparte tu score con tus amigos!
         .btns
-          .btn.btn-facebook
-            i.fab.fa-facebook
-            span presumir en facebook
-          .btn.btn-twitter
-            i.fab.fa-twitter
-            span presumir en twitter
+          .addthis_inline_share_toolbox
+  script.
+    setTimeout(() => {
+      const payByFB2 = document.querySelectorAll('.at-icon-wrapper.at-share-btn.at-svc-facebook .at-label')[1]
+      const payByTW2 = document.querySelectorAll('.at-icon-wrapper.at-share-btn.at-svc-twitter .at-label')[1]
+      payByFB2.innerHTML = "presumir en facebok"
+      payByTW2.innerHTML = "presumir en twitter"
+    },1000)
