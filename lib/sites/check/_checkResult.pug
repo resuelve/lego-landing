@@ -1,10 +1,12 @@
-mixin checkResult(number)
+mixin checkResult(number, share)
   section.checkResult
     h3 #{number} &middot; Consulta tu puntuación de buró
     .loadingZone
-      i.fa.fa-circle-notch.fa-spin
-      br
-      | Ya casi está listo, solo un poco más
+      div.spinner
+        i.fa.fa-circle-notch.fa-spin
+      div.loadbar
+        .loader: .loadNotch
+        | Ya casi está listo, solo un poco más
     .chartZone.hidden
       .barChart
         .legend
@@ -22,11 +24,16 @@ mixin checkResult(number)
         p.action
           |Eres el Super Sayayin del crédito. ¡Comparte tu score con tus amigos!
         .btns
-          .addthis_inline_share_toolbox
-  script.
-    setTimeout(() => {
-      const payByFB2 = document.querySelectorAll('.at-icon-wrapper.at-share-btn.at-svc-facebook .at-label')[1]
-      const payByTW2 = document.querySelectorAll('.at-icon-wrapper.at-share-btn.at-svc-twitter .at-label')[1]
-      payByFB2.innerHTML = "presumir en facebok"
-      payByTW2.innerHTML = "presumir en twitter"
-    },1000)
+          .fb-share-button(
+            data-href=`${share.url}`
+            data-layout="button"
+            data-size="large"
+            data-mobile-iframe="false"
+          )
+            a.btn.btn-facebook.btn-share(href=`${encodeURI('https://www.facebook.com/sharer/sharer.php?u='+share.url+'&amp;src=sdkpreparse')}`)
+              i.fab.fa-facebook
+              |  compartir en facebook
+            |&nbsp;
+            a.btn.btn-twitter.btn-share(href=`${encodeURI('https://twitter.com/intent/tweet?original_referer='+share.url+'&ref_src=twsrc^tfw&text='+share.title+'&tw_p=tweetbutton&url='+share.url+'')}`)
+              i.fab.fa-twitter
+              |  compartir en twitter

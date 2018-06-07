@@ -1,4 +1,4 @@
-mixin payment(number)
+mixin payment(number, share)
   section.payment
     h3 #{number} &middot; Elige tu forma de pago
     .zone
@@ -21,4 +21,16 @@ mixin payment(number)
       .reveal-if-active.toggleZone
         |Por tiempo limitado, solo comparte en tus redes sociales esta página
         .btns
-          .addthis_inline_share_toolbox.hidden
+          .fb-share-button(
+            data-href=`${share.url}`
+            data-layout="button"
+            data-size="large"
+            data-mobile-iframe="false"
+          )
+            a.btn.btn-facebook.btn-share(href=`${encodeURI('https://www.facebook.com/sharer/sharer.php?u='+share.url+'&amp;src=sdkpreparse')}`)
+              i.fab.fa-facebook
+              |  compartir en facebook
+            |&nbsp;
+            a.btn.btn-twitter.btn-share(href=`${encodeURI('https://twitter.com/intent/tweet?original_referer='+share.url+'&ref_src=twsrc^tfw&text='+share.title+'&tw_p=tweetbutton&url='+share.url+'')}`)
+              i.fab.fa-twitter
+              |  compartir en twitter
