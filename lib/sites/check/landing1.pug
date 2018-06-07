@@ -24,22 +24,28 @@ block body
       +checkResult(3)
   include _footer
 
+  script(type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b181384a69592b0")
+
   script.
-    const payByFB = document.querySelector('#pay-by-share1')
-    const payByTW = document.querySelector('#pay-by-share2')
-    let clicks = 0
-    const canReveal = () => {
-      if (clicks < 1) return
-      const loadingZone = document.querySelector('.loadingZone')
-      const chartZone = document.querySelector('.chartZone')
-      loadingZone.classList.add('hidden')
-      chartZone.classList.remove('hidden')
-    }
-    payByFB.onclick = () => {
-      clicks += 1
-      canReveal()
-    }
-    payByTW.onclick = () => {
-      clicks += 1
-      canReveal()
-    }
+    const btnHolders = document.querySelectorAll('.addthis_inline_share_toolbox')[0]
+    setTimeout(() => {
+      const payByFB = document.querySelectorAll('.at-icon-wrapper.at-share-btn.at-svc-facebook .at-label')[0]
+      const payByTW = document.querySelectorAll('.at-icon-wrapper.at-share-btn.at-svc-twitter .at-label')[0]
+      payByFB.innerHTML = "compartir en facebok"
+      payByTW.innerHTML = "compartir en twitter"
+      btnHolders.classList.remove('hidden')
+      let clicks = 0
+      const canReveal = () => {
+        if (clicks < 1) return
+        const loadingZone = document.querySelector('.loadingZone')
+        const chartZone = document.querySelector('.chartZone')
+        loadingZone.classList.add('hidden')
+        chartZone.classList.remove('hidden')
+      }
+
+      payByFB.onclick = () => {
+        clicks += 1
+        canReveal()
+      }
+
+    },1000)

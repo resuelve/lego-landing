@@ -34,6 +34,9 @@ h1, h2, h3, h4
 strong
   font-weight: 700
 
+.hidden
+  display: none
+
 header.header
   background-color: $black
   position: relative
@@ -151,31 +154,10 @@ p.hero
 .btns
   display: block
   margin-top: 5px
-  .btn
-    display: inline-block
-    padding: 4px 10px
-    background-color: $silver
-    border-radius: 3px
-    font-size: 14px
-    cursor: default
-    span, i
-      vertical-align: middle
-    span
-      margin-left: 5px
-    &.btn-facebook
-      color: $white
-      background-color: $facebook
-      &:hover
-        background-color: darken($facebook, 5%)
-      &:active
-        background-color: darken($facebook, 10%)
-    &.btn-twitter
-      color: $white
-      background-color: $twitter
-      &:hover
-        background-color: darken($twitter, 5%)
-      &:active
-        background-color: darken($twitter, 10%)
+  .at-icon-wrapper.at-share-btn.at-svc-facebook,
+  .at-icon-wrapper.at-share-btn.at-svc-twitter
+    .at-label
+      font-size: 16px!important
 
 section.checkResult
   padding: 0 10px
@@ -183,8 +165,6 @@ section.checkResult
   .loadingZone
     text-align: center
     padding: 50px 0
-    &.hidden
-      display: none
     i
       font-size: 100px
       margin-bottom: 20px
