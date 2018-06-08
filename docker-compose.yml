@@ -2,7 +2,7 @@ version: "3"
 services:
   development:
     build: ./lib/.
-    container_name: landing-maker
+    container_name: lego-landing
     volumes:
       - ./lib/.:/usr/app
       - /usr/app/node_modules

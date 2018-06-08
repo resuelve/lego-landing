@@ -1,5 +1,5 @@
 {
-  "name": "landing-maker",
+  "name": "lego-landing",
   "version": "1.0.0",
   "description": "Landing Maker",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/resuelve/landing-maker.git"
+    "url": "git+https://github.com/resuelve/lego-landing.git"
   },
   "author": "Carlos Flores",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/resuelve/landing-maker/issues"
+    "url": "https://github.com/resuelve/lego-landing/issues"
   },
-  "homepage": "https://github.com/resuelve/landing-maker#readme",
+  "homepage": "https://github.com/resuelve/lego-landing#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
