@@ -241,21 +241,21 @@ section.checkResult
         border-radius: 4px
       @for $i from 1 through 32
         .section-#{$i}
-          @if $i <= 8
+          @if $i <= 13
             background-color: $tomato
-          @else if $i <= 16
+          @else if $i <= 19
             background-color: $carrot
-          @else if $i <= 24
-            background-color: $sunflower
-          @else
+          @else if $i <= 22
             background-color: $green
+          @else
+            background-color: $blue
       .overlay
         position: absolute
         top: 0
         right: 0
         width: 100%
         height: 100%
-        background-color: rgba($titanium, 0.6)
+        background-color: rgba($titanium, 0.85)
     .actionZone
       text-align: center
       .number
