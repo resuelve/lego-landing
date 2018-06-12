@@ -1,32 +1,52 @@
-mixin checkResult(number)
+mixin checkResult(number, share)
   section.checkResult
     h3 #{number} &middot; Consulta tu puntuación de buró
     .loadingZone
-      i.fa.fa-circle-notch.fa-spin
-      br
-      | Ya casi está listo, solo un poco más
+      div.spinner
+        i.fa.fa-circle-notch.fa-spin
+      div.loadbar
+        .loader: .loadNotch
+        | Ya casi está listo, solo un poco más
     .chartZone.hidden
       .barChart
         .legend
-          .min 200
-          .map 400
+          .min 300
+          .map 850
         .bar
           - for ( i=1; i <= 32 ; i++ )
-            - if (i < 30)
-              .section(class=`section-${i}`).active
-            - else
-              .section(class=`section-${i}`)
+            .section(class=`section-${i}`)
+          .overlay
       .actionZone
         p Tu resultado basado en tu historial del buró de crédito es:
-        .number 380
-        p.action
-          |Eres el Super Sayayin del crédito. ¡Comparte tu score con tus amigos!
-        .btns
-          .addthis_inline_share_toolbox
-  script.
-    setTimeout(() => {
-      const payByFB2 = document.querySelectorAll('.at-icon-wrapper.at-share-btn.at-svc-facebook .at-label')[1]
-      const payByTW2 = document.querySelectorAll('.at-icon-wrapper.at-share-btn.at-svc-twitter .at-label')[1]
-      payByFB2.innerHTML = "presumir en facebok"
-      payByTW2.innerHTML = "presumir en twitter"
-    },1000)
+        .number.dataResult
+        .desc.excelente
+          .title Excelente
+          p.subtitle Tú comportamiento es admirable. Estás dentro del 25% de la población con el Score crediticio más alto.
+          p.text Realizas pagos completos y puntuales. las instituciones confían en ti y están dispuestas a ofrecerles créditos con menores tasas de interés.
+        .desc.bueno
+          .title Bueno
+          p.subtitle Tu calificación está por encima del promedio. Solo el 25% de la población tiene un mejor Score crediticio.
+          p.text Olvidaste alguna fecha de pago o en alguna ocasión sobre giraste el límite de tu tarjeta. Tienes las puertas abiertas a un crédito pero es posible que no te ofrezcan tasas preferenciales.
+        .desc.regular
+          .title Regular
+          p.subtitle Tu comportamiento es intermitente. La mitad de la población presume un mejor Score crediticio.
+          p.text La relación entre tus ingresos y lo que destinas a tus deudas no es la mejor. Aún puedes conseguir un crédito, pero con muchas condiciones.
+        .desc.malo
+          .title Malo
+          p.subtitle Tu calificación necesita mejorar. Más del 50% de la población tiene un mejor Score crediticio.
+          p.text Tarjetas de crédito sobregiradas y búsqueda de otros créditos.
+
+        .btns.excelente.bueno.regular.displayButtons
+          .fb-share-button(
+            data-href=`${share.url}`
+            data-layout="button"
+            data-size="large"
+            data-mobile-iframe="false"
+          )
+            a.btn.btn-facebook.btn-share(href=`${encodeURI('https://www.facebook.com/sharer/sharer.php?u='+share.url+'&amp;src=sdkpreparse')}`)
+              i.fab.fa-facebook
+              |  compartir en facebook
+            |&nbsp;
+            a.btn.btn-twitter.btn-share(href=`${encodeURI('https://twitter.com/intent/tweet?original_referer='+share.url+'&ref_src=twsrc^tfw&text='+share.title+'&tw_p=tweetbutton&url='+share.url+'')}`)
+              i.fab.fa-twitter
+              |  compartir en twitter
