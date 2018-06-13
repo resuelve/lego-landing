@@ -11,41 +11,21 @@ block styles
   link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet")
   link(rel="stylesheet", type="text/css", href="styles/landing1.css")
   link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous")
+block scripts
+  script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
+  script(src="scripts/landing1.js")
 
 block body
+  #fb-root
+  script.
+    (function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=1973849806277751&autoLogAppEvents=1';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
   include _header
   content.content
     .row
       p.hero Ahora consultar tu buró de crédito es tan fácil como 1 &middot; 2 &middot; 3
     .row
       +dataLoader(1)
-      +payment(2)
+      +payment(2, {url:'http://localhost:8080/check/landing1', title:title})
     .row
-      +checkResult(3)
+      +checkResult(3, {url:'http://localhost:8080/check/landing1', title:"Esto fué sencillo!"})
   include _footer
-
-  script(type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b181384a69592b0")
-
-  script.
-    const btnHolders = document.querySelectorAll('.addthis_inline_share_toolbox')[0]
-    setTimeout(() => {
-      const payByFB = document.querySelectorAll('.at-icon-wrapper.at-share-btn.at-svc-facebook .at-label')[0]
-      const payByTW = document.querySelectorAll('.at-icon-wrapper.at-share-btn.at-svc-twitter .at-label')[0]
-      payByFB.innerHTML = "compartir en facebok"
-      payByTW.innerHTML = "compartir en twitter"
-      btnHolders.classList.remove('hidden')
-      let clicks = 0
-      const canReveal = () => {
-        if (clicks < 1) return
-        const loadingZone = document.querySelector('.loadingZone')
-        const chartZone = document.querySelector('.chartZone')
-        loadingZone.classList.add('hidden')
-        chartZone.classList.remove('hidden')
-      }
-
-      payByFB.onclick = () => {
-        clicks += 1
-        canReveal()
-      }
-
-    },1000)
