@@ -1,0 +1,64 @@
+header.header
+  width: 100%
+  height: 562px
+  background-color: #58FFF8
+  background: linear-gradient(-45deg, #2AEB8F, #58FFF8)
+  position: relative
+  padding: 10px 30px
+
+  .curve, .bg
+    position: absolute
+    font-size: 0
+    z-index: 0
+  .curve
+    top: 0
+    left: 0
+  .bg
+    bottom: 0
+    right: 0
+    height: 100%
+    width: 100%
+    overflow: hidden
+    text-align: right
+    img
+      height: 100%
+
+  .nav
+    position: relative
+    a
+      text-decoration: none
+    .link
+      flex-align: middle
+      display: flex
+      align-items: center
+      padding: 0 5px
+
+    .btn
+      padding: 4px 20px
+      border: 2px solid #1B4C8A
+      border-radius: 5px
+      font-weight: 800
+
+  .brand
+    .bg
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+    .logo
+      width: 150px
+      height: 50px
+      display: flex
+      align-items: center
+      justify-content: center
+      position: relative
+
+  .nav, ul
+    display: flex
+    justify-content: space-between
+    li
+      display: flex
+      font-weight: 600
+      color: #1B4C8A
+      verical-align: middle
+      text-transform: uppercase
