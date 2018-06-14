@@ -1,9 +1,9 @@
 header.header
-  .curve: img(src="images/onda.svg")
-  .bg: img(src="images/bg.svg")
+  .bg: img(src="images/header-back.svg")
+  .curve: img(src="images/header-onda.svg")
   nav.nav
     .brand
-      .logo: img(src="images/check-logo.png")
+      .logo: img(src="images/check-logo.svg")
     ul
       li: a(href="#").link Beneficios
       li: a(href="#").link Servicios
@@ -13,9 +13,15 @@ header.header
       li: a(href="#").link Conócenos
       li: .link: a(href="#").btn Quiero Check
 
-  .row
-    .is-half
+  section.row.content
+    section.is-half.cta
       h2 La única herramienta para mejorar tu historial crediticio
       p Corregir tu vida financiera no es complicado
+      .cta-btn
+        .btn.full Quiero mejorar mi historial
 
-      .btn.full Quiero mejorar mi historial
+    .is-half
+      figure.cards
+        img(src="images/header-triangle.svg").triangle
+        img(src="images/header-textura.png")
+        img(src="images/header-cards.png")
