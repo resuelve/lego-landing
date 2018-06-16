@@ -1,3 +1,10 @@
+body
+  & *
+    outline: 1px solid red
+  &:hover *
+    outline: none
+
+
 body, html
   margin: 0
   padding: 0
@@ -6,19 +13,67 @@ body
   &, *
     box-sizing: border-box
 
-  // Wireframing for dev
-  &, *
-    outline: 1px solid red
-
-ul, li
+ol, ul, li
   list-style: none
   padding: 0
   margin: 0
 
 .row
   display: flex
+  &.stretch
+    justify-content: space-between
+  &.wrap
+    flew-wrap: wrap
   .is-half
     width: 50%
 
+.v-divisor
+  width: 17px
+  position: relative
+  &.green
+    .bar
+      background-color: #94F5C7
+    .triangle
+      border-left: 10px solid #94F5C7
+  &.blue
+    .bar
+      background-color: #5479A8
+    .triangle
+      border-left: 10px solid #5479A8
+  &.red
+    .bar
+      background-color: #DF634B
+    .triangle
+      border-left: 10px solid #DF634B
+  .bar, .triangle
+    position: absolute
+    top: 50%
+    transform: translate(-50%, -50%)
+  .bar
+    width: 3px
+    height: 100%
+    left: 50%
+  .triangle
+    border-top: 20px solid transparent
+    border-bottom: 20px solid transparent
+    position: relative
+    left: 5px
+    &:after
+      position: absolute
+      content: ''
+      border-top: 20px solid transparent
+      border-bottom: 20px solid transparent
+      border-left: 10px solid #fff
+      left: -13px
+      top: -20px
+
 @import "_header"
 @import "_beneficios"
+@import "_servicios"
+@import "_adquirirla"
+@import "_oportunidad"
+@import "_comisiones"
+@import "_informacion"
+@import "_articles"
+
+@import "_footer"
