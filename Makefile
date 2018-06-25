@@ -10,5 +10,8 @@ logs:
 dev:
 	make stop && make start && make logs
 
+build:
+	docker-compose up build
+
 restart:
 	docker-compose restart
