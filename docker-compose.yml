@@ -5,6 +5,7 @@ services:
     container_name: lego-landing
     volumes:
       - ./lib/.:/usr/app
+      - ../sites/src/.:/usr/app/sites/
       - /usr/app/node_modules
     environment:
       - ENV=development
@@ -18,5 +19,7 @@ services:
     container_name: lego-builder
     volumes:
       - ./lib/.:/usr/app
+      - ../sites/src/.:/usr/app/sites/
+      - ../sites/dist/.:/usr/app/dist/
       - /usr/app/node_modules
     command: npm run build

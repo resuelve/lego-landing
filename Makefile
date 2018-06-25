@@ -2,7 +2,7 @@ stop:
 	docker-compose stop
 
 start:
-	docker-compose up -d
+	docker-compose up -d development
 
 logs:
 	docker-compose logs -f
