@@ -4,7 +4,7 @@ import path from 'path'
 /**
 * Define el path a donde estarán las vistas ordenadas por nombre de sitio
 **/
-export const sitesDir = path.join(__dirname, '../sites')
+export const sitesDir = path.join(process.cwd(), './sites')
 
 /**
 * Función recursiva que pasa por todo un directorio trayaendo

@@ -5,12 +5,11 @@ import { sync as copyDir } from 'copy-dir'
 import mkdirp from 'mkdirp'
 const pug = require('pug')
 const fs = require('fs')
-import '../config/logger'
 import sites, { sitesDir } from './sites'
 import sass from 'sass'
 
 const rimrafAsync = promisify(rimraf)
-const distPath = path.join(__dirname, '../dist')
+const distPath = path.join(process.cwd(), './dist')
 const mkdirpAsync = promisify(mkdirp)
 const readDirAsync = promisify(fs.readdir)
 const sassRenderAsync = promisify(sass.render)
@@ -128,9 +127,9 @@ const bundleStyles = async () => {
     })
 }
 
-(async () => {
+export const Builder = async () => {
   await cleanStart()
   await bundleAssets()
   await bundleHTML()
   await bundleStyles()
-})()
+}
