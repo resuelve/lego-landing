@@ -2,8 +2,9 @@ import sass from 'sass'
 import url from 'url'
 import fs from 'fs'
 import path from 'path'
+import { sitesDir } from './sites'
 
-const srcPath = path.join(__dirname, '../sites/')
+const srcPath = path.join(sitesDir)
 
 /**
 * Función para transformar un sass en css
