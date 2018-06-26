@@ -1,5 +1,5 @@
 {
-  "name": "lego-landing",
+  "name": "@resuelve/lego-landing",
   "version": "1.0.0",
   "description": "Landing Maker",
   "main": "index.js",
