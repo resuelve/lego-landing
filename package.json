@@ -1,6 +1,6 @@
 {
   "name": "@resuelve/lego-landing",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Landing Maker",
   "main": "index.js",
   "repository": {
@@ -14,7 +14,9 @@
   },
   "homepage": "https://github.com/resuelve/lego-landing#readme",
   "bundledDependencies": [
-    "@babel/core", "@babel/preset-env", "@babel/register"
+    "@babel/core",
+    "@babel/preset-env",
+    "@babel/register"
   ],
   "dependencies": {
     "@babel/core": "^7.0.0-beta.51",
