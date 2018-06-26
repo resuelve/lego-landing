@@ -20,7 +20,7 @@ y ejecutarlo con
 `Server()`  
 
 El puerto donde va a correr el servidor de dev se define en un archivo
-`.env` como PORT o diréctamente como una variable de entorno.  
+`.env` como PORT o directamente como una variable de entorno.  
 
 Debes tener dos directorios en tu ambiente de desarrollo:  
 
