@@ -1,5 +1,4 @@
-require('@babel/register')
-const { Server, Builder } = require('./src')
+const { Server, Builder } = require('./build')
 
 module.exports.Builder = Builder
 module.exports.Server = Server
