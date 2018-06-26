@@ -14,21 +14,21 @@
   },
   "homepage": "https://github.com/resuelve/lego-landing#readme",
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@babel/register": "^7.0.0-beta.51",
     "body-parser": "^1.18.3",
     "consolecolors": "^0.33.2-b",
     "copy-dir": "^0.3.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "human-elapsed": "^1.0.3",
+    "livereload": "^0.7.0",
     "memoizee": "^0.4.12",
     "mkdirp": "^0.5.1",
     "pug": "^2.0.3",
     "request": "^2.87.0",
     "rimraf": "^2.6.2",
-    "sass": "^1.5.0",
-    "livereload": "^0.7.0"
+    "sass": "^1.5.0"
   }
 }
